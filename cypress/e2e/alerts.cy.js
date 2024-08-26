@@ -43,7 +43,9 @@ describe("Handle alerts", () => {
     it.only("JS alert with prompt without value, Cancel", () => {
 
         cy.get('button[onclick="jsPrompt()"]').should("be.visible").click();
+        cy.on("window:alert", () => false)
         cy.get('p[id="result"]').should("have.text", "You entered: null")
+
         
     })
 
