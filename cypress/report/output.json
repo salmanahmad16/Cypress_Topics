@@ -1,0 +1,188 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666667,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-08-27T15:12:46.273Z",
+    "end": "2024-08-27T15:15:20.663Z",
+    "duration": 154390
+  },
+  "results": [
+    {
+      "uuid": "abacd67c-c1b6-472b-8a1b-de043e865d8c",
+      "title": "",
+      "fullFile": "cypress/e2e/Clicks.cy.js",
+      "file": "cypress/e2e/Clicks.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "556c3cd0-3379-4418-880a-f375cb3eddb9",
+          "title": "Clicks",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Guru 99 Demo",
+              "fullTitle": "Clicks Guru 99 Demo",
+              "timedOut": null,
+              "duration": 71211,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://demo.guru99.com/test/simple_context_menu.html\");\ncy.contains('right click me').rightclick();\ncy.wait(4000);\ncy.contains('Double-Click Me To See Alert').dblclick({\n  force: true\n}).then(function () {\n  cy.on('window:alert', text => {\n    expect(text).to.contains(\"You double clicked me.. Thank You..\");\n  });\n});",
+              "err": {},
+              "uuid": "733aba13-b577-45e9-939b-a8efcb54fa76",
+              "parentUUID": "556c3cd0-3379-4418-880a-f375cb3eddb9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "733aba13-b577-45e9-939b-a8efcb54fa76"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 71211,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1b49bfbc-4674-46ed-9f65-97c9491771f9",
+      "title": "",
+      "fullFile": "cypress/e2e/uploads.cy.js",
+      "file": "cypress/e2e/uploads.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f9abf3c9-199c-4995-8ba4-17c65e0b54c8",
+          "title": "Handle Uploads",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Upload simple file with button",
+              "fullTitle": "Handle Uploads Upload simple file with button",
+              "timedOut": null,
+              "duration": 15431,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#file-upload').attachFile('leo.jpg');\ncy.wait(2000);\ncy.get('#file-submit').click();\ncy.wait(2000);\ncy.get('.example>h3').should(\"have.text\", \"File Uploaded!\");",
+              "err": {},
+              "uuid": "65f4f2ec-ecaa-4b4f-bea6-0130fee1af5d",
+              "parentUUID": "f9abf3c9-199c-4995-8ba4-17c65e0b54c8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Upload simple file with drag and drop",
+              "fullTitle": "Handle Uploads Upload simple file with drag and drop",
+              "timedOut": null,
+              "duration": 13215,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/uploads.cy.js/Handle Uploads -- Upload simple file with drag and drop (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.get('#drag-drop-upload').attachFile('leo.jpg', {\n  subjectType: 'drag-n-drop'\n});\ncy.get('#file-submit').click();\ncy.wait(2000);\ncy.get('.example>h3').should(\"have.text\", \"File Uploaded!\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.example>h3`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `.example>h3`, but never found it.\n    at Context.eval (webpack://cypress_topics/./cypress/e2e/uploads.cy.js:23:30)",
+                "diff": null
+              },
+              "uuid": "4348d93f-3f59-4ef9-967e-4cfee59955d5",
+              "parentUUID": "f9abf3c9-199c-4995-8ba4-17c65e0b54c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "65f4f2ec-ecaa-4b4f-bea6-0130fee1af5d"
+          ],
+          "failures": [
+            "4348d93f-3f59-4ef9-967e-4cfee59955d5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 28646,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "chart": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

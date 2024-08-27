@@ -1,15 +1,26 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  
   e2e: {
-    // Set the default timeout for most commands (in milliseconds)
+   
     defaultCommandTimeout: 10000, // 10 seconds
+    requestTimeout: 15000,
+    pageLoadTimeout: 120000, 
+    reporter: 'mochawesome',
+    reporterOptions:{
+      "chart":true,
+      "overwrite":false,
+      "html":false,
+      "json":true,
+      "reportDir":"cypress/report"
 
-    // Optionally, set the default timeout for HTTP requests (in milliseconds)
-    requestTimeout: 15000, // 15 seconds
-    setupNodeEvents(on, config) {
-      pageLoadTimeout: 120000 // Increase to 2 minutes (120000 ms)
-      // implement node event listeners here
     },
-  },
-});
+    },
+    setupNodeEvents(on, config) {
+      screenshotOnRunFailure=true;
+      require('cypress-mochawesome-reporter/plugin')(on);
+ 
+    },
+},
+);
